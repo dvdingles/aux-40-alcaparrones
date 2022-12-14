@@ -6,34 +6,40 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function Dav(props) {
-  const { nodes, materials } = useGLTF("/3D POLLITOS.gltf");
+  const { nodes, materials } = useGLTF("/4D ALCAPARRONES.gltf");
   return (
     <group {...props} dispose={null}>
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Plano004.geometry}
-        material={materials["Material.001"]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
         geometry={nodes.Plano005.geometry}
         material={materials["Material.001"]}
+        position={[-0.03, 0.18, -0.11]}
+        rotation={[0, Math.PI / 2, 0]}
       />
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.Plano006.geometry}
         material={materials["Material.001"]}
+        position={[-0.03, 0.18, -0.11]}
+        rotation={[0, Math.PI / 2, 0]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Plano007.geometry}
+        material={materials["Material.001"]}
+        position={[-0.03, 0.18, -0.11]}
+        rotation={[0, Math.PI / 2, 0]}
       />
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.Texto003.geometry}
         material={materials["Material.001"]}
-        position={[0.25, -0.14, 0.02]}
-        rotation={[Math.PI / 2, 0, -Math.PI / 2]}
+        position={[0.27, -0.02, 0.05]}
+        rotation={[Math.PI / 2, 0, 0]}
         scale={0.5}
       />
       <mesh
@@ -41,7 +47,7 @@ export function Dav(props) {
         receiveShadow
         geometry={nodes.Texto004.geometry}
         material={materials["Material.001"]}
-        position={[0.01, -0.14, 0.31]}
+        position={[0, -0.02, 0.31]}
         rotation={[Math.PI / 2, 0, -Math.PI / 2]}
         scale={0.5}
       />
@@ -50,30 +56,32 @@ export function Dav(props) {
         receiveShadow
         geometry={nodes.Texto005.geometry}
         material={materials["Material.001"]}
-        position={[0.2, 0.01, -0.16]}
-        rotation={[Math.PI / 2, 0, -Math.PI / 2]}
+        position={[0.27, 0, -0.09]}
+        rotation={[Math.PI / 2, 0, 0]}
         scale={0.5}
       />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes["TQ_ARD-geom001"].geometry}
-        material={materials.TQ_ARD_front}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes["TQ_ARD-geom001_1"].geometry}
-        material={materials.TQ_ARD_back}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes["TQ_ARD-geom001_2"].geometry}
-        material={materials.TQ_ARD_edge}
-      />
+      <group position={[0, -0.01, 0]}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["TQ_ARD-geom001"].geometry}
+          material={materials.TQ_ARD_front}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["TQ_ARD-geom001_1"].geometry}
+          material={materials["back-dil"]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["TQ_ARD-geom001_2"].geometry}
+          material={materials.TQ_ARD_edge}
+        />
+      </group>
     </group>
   );
 }
 
-useGLTF.preload("/3D POLLITOS.gltf");
+useGLTF.preload("/4D ALCAPARRONES.gltf");
